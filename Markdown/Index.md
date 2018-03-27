@@ -17,5 +17,6 @@
 - Reader (EE 16A, Spring '18)
 
 ## Resources
-- <a href = "">CS 61A</a>
-- <a href = "">CS 61B</a>
+- [CS 61A]("https://lilybhattacharjee5.github.io/personal-website/cs61a.html")
+- [CS 61B]("https://lilybhattacharjee5.github.io/personal-website/cs61b.html")
+- [DS 100]("https://lilybhattacharjee5.github.io/personal-website/ds100.html")
