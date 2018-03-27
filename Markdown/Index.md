@@ -17,6 +17,6 @@
 - Reader (EE 16A, Spring '18)
 
 ## Resources
-- [CS 61A](CS61A.html)
-- [CS 61B](CS61B.html)
-- [DS 100](DS100.html)
+- [CS 61A](/html/CS61A.html)
+- [CS 61B](/html/CS61B.html)
+- [DS 100](/html/DS100.html)
