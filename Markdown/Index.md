@@ -20,3 +20,6 @@
 - [CS 61A](Html/CS61A.html)
 - [CS 61B](Html/CS61B.html)
 - [DS 100](Html/DS100.html)
+
+## Current Projects
+- [TrackML Particle Tracking Challenge](Html/ParticleTrackingChallenge.html)
