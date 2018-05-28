@@ -11829,16 +11829,18 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Link-Class-(given-on-exam)">The Link Class (given on exam)<a class="anchor-link" href="#The-Link-Class-(given-on-exam)">&#182;</a></h3><p>class Link: 
-    def <strong>init</strong>(self, first, rest=empty):
-        assert rest is Link.empty or isinstance(rest, Link) 
-        self.first = first
-        self.rest = rest</p>
-<p>def <strong>repr</strong>(self):
-    if self.rest is Link.empty:<br>
-        return "Link({})".format(self.first)<br>
-    else:<br>
-        return "Link({}, {})".format(self.first, self.rest)</p>
+<h3 id="The-Link-Class-(given-on-exam)">The Link Class (given on exam)<a class="anchor-link" href="#The-Link-Class-(given-on-exam)">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Link</span><span class="p">:</span> 
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="p">,</span> <span class="n">rest</span><span class="o">=</span><span class="n">empty</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">rest</span> <span class="ow">is</span> <span class="n">Link</span><span class="o">.</span><span class="n">empty</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rest</span><span class="p">,</span> <span class="n">Link</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rest</span> <span class="o">=</span> <span class="n">rest</span>
+
+<span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span> <span class="ow">is</span> <span class="n">Link</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>             
+        <span class="k">return</span> <span class="s2">&quot;Link({})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">)</span>                
+    <span class="k">else</span><span class="p">:</span>                   
+        <span class="k">return</span> <span class="s2">&quot;Link({}, {})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="p">)</span>
+</pre></div>
 <h3 id="The-Link-Class-(customized)">The Link Class (customized)<a class="anchor-link" href="#The-Link-Class-(customized)">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Link</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
@@ -11909,25 +11911,28 @@ Note 2: You may use methods you have created in the previous problems to support
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="OOP">OOP<a class="anchor-link" href="#OOP">&#182;</a></h3><p>Source: <a href="https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews">https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews</a></p>
-<ol>
-<li><p>Create model classes that will properly represent the following constructs:
+<p>1) Create model classes that will properly represent the following constructs:
+<br>
 Define a Shape object, where the object is any two dimensional figure, and has the following characteristics: a name, a perimeter, and a surface area.
+<br>
 Define a Circle, retaining and accurately outputting the values of the aforementioned characteristics of a Shape.
+<br>
 Define a Triangle. This time, the name of the triangle should take into account if it is equilateral (all 3 sides are the same length), isosceles (only 2 sides are the same length), or scalene (no 2 sides are the same).
+<br>
 Continue with the quadrilaterals!</p>
-</li>
-<li><p>We need to control access to a customer web site.
+<p>2) We need to control access to a customer web site.
+<br>
 each customer may have one or more people to access the site
+<br>
 different people from different customers may be able to view different parts of the site
+<br>
 the same person may work for more than one customer
+<br>
 customers want to manage permissions based on the person, department, team, or project
+<br>
 Design a solution for this using object-oriented technique.</p>
-</li>
-<li><p>(Are you smarter than a CS Grad?) Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz."</p>
-</li>
-<li><p>Make a rough class diagram of the game Pacman. What classes would you need? What class / instance variables are necessary? Would some classes depend on the others?</p>
-</li>
-</ol>
+<p>3) (Are you smarter than a CS Grad?) Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz."</p>
+<p>4) Make a rough class diagram of the game Pacman. What classes would you need? What class / instance variables are necessary? Would some classes depend on the others?</p>
 
 </div>
 </div>

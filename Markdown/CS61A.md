@@ -37,6 +37,7 @@ def move_disk(start, end):
 
 ### The Link Class (given on exam)
 
+```python
 class Link:	
 	def __init__(self, first, rest=empty):
         assert rest is Link.empty or isinstance(rest, Link) 
@@ -48,6 +49,7 @@ def __repr__(self):
         return "Link({})".format(self.first)				
     else: 					
         return "Link({}, {})".format(self.first, self.rest)
+```
 
 ### The Link Class (customized)
 
@@ -120,22 +122,37 @@ Create a method that…
 
 Source: https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews
 
-1. Create model classes that will properly represent the following constructs:
+1) Create model classes that will properly represent the following constructs:
+<br>
 Define a Shape object, where the object is any two dimensional figure, and has the following characteristics: a name, a perimeter, and a surface area.
+<br>
 Define a Circle, retaining and accurately outputting the values of the aforementioned characteristics of a Shape.
+<br>
 Define a Triangle. This time, the name of the triangle should take into account if it is equilateral (all 3 sides are the same length), isosceles (only 2 sides are the same length), or scalene (no 2 sides are the same).
+<br>
 Continue with the quadrilaterals!
 
-2. We need to control access to a customer web site.
+
+
+2) We need to control access to a customer web site.
+<br>
 each customer may have one or more people to access the site
+<br>
 different people from different customers may be able to view different parts of the site
+<br>
 the same person may work for more than one customer
+<br>
 customers want to manage permissions based on the person, department, team, or project
+<br>
 Design a solution for this using object-oriented technique.
 
-3. (Are you smarter than a CS Grad?) Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz."
 
-4. Make a rough class diagram of the game Pacman. What classes would you need? What class / instance variables are necessary? Would some classes depend on the others?
+
+3) (Are you smarter than a CS Grad?) Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz."
+
+
+
+4) Make a rough class diagram of the game Pacman. What classes would you need? What class / instance variables are necessary? Would some classes depend on the others?
 
 ### Tree Data Structures
 Source: https://www.careercup.com/page?pid=trees-and-graphs-interview-questions

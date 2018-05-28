@@ -360,13 +360,21 @@ an unsorted sequence s and sorts it.
     \subsubsection{The Link Class (given on
 exam)}\label{the-link-class-given-on-exam}
 
-class Link: def \textbf{init}(self, first, rest=empty): assert rest is
-Link.empty or isinstance(rest, Link) self.first = first self.rest = rest
-
-def \textbf{repr}(self): if self.rest is Link.empty:\\
-return "Link(\{\})".format(self.first)\\
-else:\\
-return "Link(\{\}, \{\})".format(self.first, self.rest)
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Link: }
+    \KeywordTok{def} \FunctionTok{__init__}\NormalTok{(}\VariableTok{self}\NormalTok{, first, rest}\OperatorTok{=}\NormalTok{empty):}
+        \ControlFlowTok{assert}\NormalTok{ rest }\KeywordTok{is}\NormalTok{ Link.empty }\KeywordTok{or} \BuiltInTok{isinstance}\NormalTok{(rest, Link) }
+        \VariableTok{self}\NormalTok{.first }\OperatorTok{=}\NormalTok{ first}
+        \VariableTok{self}\NormalTok{.rest }\OperatorTok{=}\NormalTok{ rest}
+    
+\KeywordTok{def} \FunctionTok{__repr__}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+    \ControlFlowTok{if} \VariableTok{self}\NormalTok{.rest }\KeywordTok{is}\NormalTok{ Link.empty:             }
+        \ControlFlowTok{return} \StringTok{"Link(}\SpecialCharTok{\{\}}\StringTok{)"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(}\VariableTok{self}\NormalTok{.first)                }
+    \ControlFlowTok{else}\NormalTok{:                   }
+        \ControlFlowTok{return} \StringTok{"Link(}\SpecialCharTok{\{\}}\StringTok{, }\SpecialCharTok{\{\}}\StringTok{)"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(}\VariableTok{self}\NormalTok{.first, }\VariableTok{self}\NormalTok{.rest)}
+\end{Highlighting}
+\end{Shaded}
 
 \subsubsection{The Link Class
 (customized)}\label{the-link-class-customized}
@@ -445,7 +453,7 @@ Source:
 https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+\def\labelenumi{\arabic{enumi})}
 \item
   Create model classes that will properly represent the following
   constructs: Define a Shape object, where the object is any two
