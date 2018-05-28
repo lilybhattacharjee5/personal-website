@@ -11909,6 +11909,217 @@ a.anchor-link {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Miscellaneous-Resources">Miscellaneous Resources<a class="anchor-link" href="#Miscellaneous-Resources">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tree-Recursion">Tree Recursion<a class="anchor-link" href="#Tree-Recursion">&#182;</a></h3><p>Check out this link for more tree recursion practice: <a href="https://practice.geeksforgeeks.org/topic-tags">https://practice.geeksforgeeks.org/topic-tags</a></p>
+<ol>
+<li>Given a number n, generate all distinct ways to write n as the sum of positive integers. For example, with n = 4, the options are 4, 3 + 1, 2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.  </li>
+<li><p>Write a recursive function that checks whether a string is a palindrome (a palindrome is a string that's the same when reads forwards and backwards.)</p>
+</li>
+<li><p>Write a procedure that computes elements of Pascal's triangle by means of a recursive process. Define the procedure pascal(row, column) which takes a row and a column, and finds the value at that position in the triangle.</p>
+</li>
+<li><p>Consider the subset_sum problem: you are given a list of integers and a number k. Is there a subset of the list that adds up to k?</p>
+</li>
+<li><p>We will now write one of the faster sorting algorithms commonly used, named Mergesort. Merge sort works like this:</p>
+<p>a. If there’s only one (or zero) item(s) in the sequence, it’s
+ already sorted!
+ b. If there’s more than one item, then we can split the sequence in
+ half, sort each half recursively, then merge the results (using the
+ merge procedure from earlier in the notes). The result will be a    sorted sequence.</p>
+</li>
+</ol>
+<p>Using the described algorithm, write a function mergesort(s) that takes an unsorted sequence s and sorts it.</p>
+<ol>
+<li>Complete the definition of towers_of_hanoi which prints out the steps to solve this puzzle for any number of n disks starting from the start rod and moving them to the end rod.</li>
+</ol>
+<p><code>
+def towers_of_hanoi(n, start, end):
+    …</p>
+<p>def move_disk(start, end):
+    …
+&lt;/code&gt;</p>
+<ol>
+<li>Implement Binary Search recursively.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Link-Class-(given-on-exam)">The Link Class (given on exam)<a class="anchor-link" href="#The-Link-Class-(given-on-exam)">&#182;</a></h3><p><code>
+class Link: 
+    def <strong>init</strong>(self, first, rest=empty):
+        assert rest is Link.empty or isinstance(rest, Link) 
+        self.first = first
+        self.rest = rest</p>
+<p>def <strong>repr</strong>(self):
+    if self.rest is Link.empty:<br>
+        return "Link({})".format(self.first)<br>
+    else:<br>
+        return "Link({}, {})".format(self.first, self.rest)
+&lt;/code&gt;</p>
+<h3 id="The-Link-Class-(customized)">The Link Class (customized)<a class="anchor-link" href="#The-Link-Class-(customized)">&#182;</a></h3><p><code>
+class Link:
+    def <strong>init</strong>(self, first = None, rest = None):
+        self.first = first
+        self.rest = rest</p>
+
+<pre><code>def __repr__(self):
+    # empty link ---&gt; None 
+    if self.first == None:
+        return "()"
+    else:
+   return 'Link' + '(' + str(self.first) + "," + 
+self.rest.__repr__() + ')'
+
+def multiply(self, n):
+    if self.rest.first == None:
+        self.first = n * self.first
+    else:
+        self.first = n * self.first
+        self.rest.multiply(n)
+
+def a_multiply(self, n):
+    # if self == Link.empty
+    if self.rest.first == None:
+        return Link(self.first * n)
+    else:
+        return Link(self.first * n, self.rest.a_multiply(n))
+
+def skip_node(self, n = 1):
+    if self.first == None:
+        return Link()
+    elif self.rest.first == None:
+        return Link(self.first, Link())
+    else:
+        return Link(self.first, self.rest.rest.skip_node(n))
+
+
+</code></pre>
+<p>x = Link(5, Link(7, Link(9, Link(6, Link(8, Link())))))
+y = [5,7,9,6]
+print(x.a_multiply(3))
+print(x)
+print(x.skip_node())
+&lt;/code&gt;</p>
+<h3 id="Additional-Link-Problems">Additional Link Problems<a class="anchor-link" href="#Additional-Link-Problems">&#182;</a></h3><p>Note 1: The term ‘list’ refers to linked list.
+Note 2: You may use methods you have created in the previous problems to support your code for later problems.</p>
+<p>Create a method that…</p>
+<ol>
+<li>adds an element to the beginning of the list (mutator)
+ variant: deletes an element from the beginning and returns it</li>
+<li>adds an element to the end of the list (mutator)
+ variant: deletes an element from the end and returns it</li>
+<li>returns a new linked list that skips ‘n’ nodes from the original linked list</li>
+<li>counts the number of times an element occurs in the list</li>
+<li>‘deletes’ all instances of an element from the list</li>
+<li>insert element at the nth position (mutator)</li>
+<li>takes a sorted list and inserts an element in the sorted position (mutator)</li>
+<li>given a list, returns a new list that contains all of the nodes in sorted order</li>
+<li>appends the elements of another linked list onto the end of the original one</li>
+<li>find the length of the longest consecutive sequence of elements that is strictly increasing</li>
+<li>remove all duplicates from a sorted list</li>
+<li>reverse the order of the elements in the list</li>
+<li>Refer to this Stanford link and this interview problems link for more problems.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="OOP">OOP<a class="anchor-link" href="#OOP">&#182;</a></h3><p>Source: <a href="https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews">https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews</a></p>
+<ol>
+<li>Create model classes that will properly represent the following constructs:
+Define a Shape object, where the object is any two dimensional figure, and has the following characteristics: a name, a perimeter, and a surface area.
+Define a Circle, retaining and accurately outputting the values of the aforementioned characteristics of a Shape.
+Define a Triangle. This time, the name of the triangle should take into account if it is equilateral (all 3 sides are the same length), isosceles (only 2 sides are the same length), or scalene (no 2 sides are the same).
+Continue with the quadrilaterals!</li>
+<li><p>We need to control access to a customer web site.
+each customer may have one or more people to access the site
+different people from different customers may be able to view different parts of the site
+the same person may work for more than one customer
+customers want to manage permissions based on the person, department, team, or project
+Design a solution for this using object-oriented technique.</p>
+</li>
+<li><p>(Are you smarter than a CS Grad?) Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz."</p>
+</li>
+<li><p>Make a rough class diagram of the game Pacman. What classes would you need? What class / instance variables are necessary? Would some classes depend on the others?</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tree-Data-Structures">Tree Data Structures<a class="anchor-link" href="#Tree-Data-Structures">&#182;</a></h3><p>Source: <a href="https://www.careercup.com/page?pid=trees-and-graphs-interview-questions">https://www.careercup.com/page?pid=trees-and-graphs-interview-questions</a></p>
+<p>Directions: For each problem, write a new method for the Tree class. You can only use the methods already given or a method from the problems above.</p>
+<p><code>
+class Tree:</p>
+
+<pre><code>def __init__(self, label, branches):
+    self.label = label
+    self.branches = branches
+
+def is_leaf(self):
+    if not self.branches:
+        return True
+    return False
+
+def branches(self):
+    return self.branches
+
+def label(self):
+    return self.label
+</code></pre>
+<p>&lt;/code&gt;</p>
+<ol>
+<li>Minimum tree height (i.e. shortest branch from root node)</li>
+<li>Largest integer value in the tree</li>
+<li>Are two trees equal?</li>
+<li>Traverse all of the elements of the tree in whatever order you want… using iteration</li>
+<li>Find the minimum sum of any branch from root to leaf.</li>
+<li>Find the maximum sum among all elements in the tree (don’t have to be in the same branch).</li>
+<li>Given a Tree where each node contains an attribute e.g. color (R,G,B... etc), find the subtree with the maximum number of attributes. </li>
+</ol>
+<p><code>
+Input: 
+G 
+/ \ 
+B  R 
+/ \ / \ 
+B B R R 
+/ \ / \ 
+B R R R</p>
+<p>Output: 
+R 
+/ \ 
+R R 
+\ / \ 
+R R R
+&lt;/code&gt;</p>
+
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 

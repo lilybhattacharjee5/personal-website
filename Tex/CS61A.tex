@@ -283,6 +283,241 @@
     \section{CS 61A: The Structure and Interpretation of Computer
 Programs}\label{cs-61a-the-structure-and-interpretation-of-computer-programs}
 
+    \subsection{Miscellaneous Resources}\label{miscellaneous-resources}
+
+    \subsubsection{Tree Recursion}\label{tree-recursion}
+
+Check out this link for more tree recursion practice:
+https://practice.geeksforgeeks.org/topic-tags
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Given a number n, generate all distinct ways to write n as the sum of
+  positive integers. For example, with n = 4, the options are 4, 3 + 1,
+  2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.  
+\item
+  Write a recursive function that checks whether a string is a
+  palindrome (a palindrome is a string that's the same when reads
+  forwards and backwards.)
+\item
+  Write a procedure that computes elements of Pascal's triangle by means
+  of a recursive process. Define the procedure pascal(row, column) which
+  takes a row and a column, and finds the value at that position in the
+  triangle.
+\item
+  Consider the subset\_sum problem: you are given a list of integers and
+  a number k. Is there a subset of the list that adds up to k?
+\item
+  We will now write one of the faster sorting algorithms commonly used,
+  named Mergesort. Merge sort works like this:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    If there's only one (or zero) item(s) in the sequence, it's already
+    sorted!
+  \item
+    If there's more than one item, then we can split the sequence in
+    half, sort each half recursively, then merge the results (using the
+    merge procedure from earlier in the notes). The result will be a
+    sorted sequence.
+  \end{enumerate}
+\end{enumerate}
+
+Using the described algorithm, write a function mergesort(s) that takes
+an unsorted sequence s and sorts it.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Complete the definition of towers\_of\_hanoi which prints out the
+  steps to solve this puzzle for any number of n disks starting from the
+  start rod and moving them to the end rod.
+\end{enumerate}
+
+ def towers\_of\_hanoi(n, start, end): \ldots{}
+
+def move\_disk(start, end): \ldots{}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Implement Binary Search recursively.
+\end{enumerate}
+
+    \subsubsection{The Link Class (given on
+exam)}\label{the-link-class-given-on-exam}
+
+ class Link: def \textbf{init}(self, first, rest=empty): assert rest is
+Link.empty or isinstance(rest, Link) self.first = first self.rest = rest
+
+def \textbf{repr}(self): if self.rest is Link.empty:\\
+return "Link(\{\})".format(self.first)\\
+else:\\
+return "Link(\{\}, \{\})".format(self.first, self.rest)
+
+\subsubsection{The Link Class
+(customized)}\label{the-link-class-customized}
+
+ class Link: def \textbf{init}(self, first = None, rest = None):
+self.first = first self.rest = rest
+
+\begin{verbatim}
+def __repr__(self):
+    # empty link ---> None 
+    if self.first == None:
+        return "()"
+    else:
+   return 'Link' + '(' + str(self.first) + "," + 
+self.rest.__repr__() + ')'
+        
+def multiply(self, n):
+    if self.rest.first == None:
+        self.first = n * self.first
+    else:
+        self.first = n * self.first
+        self.rest.multiply(n)
+        
+def a_multiply(self, n):
+    # if self == Link.empty
+    if self.rest.first == None:
+        return Link(self.first * n)
+    else:
+        return Link(self.first * n, self.rest.a_multiply(n))
+        
+def skip_node(self, n = 1):
+    if self.first == None:
+        return Link()
+    elif self.rest.first == None:
+        return Link(self.first, Link())
+    else:
+        return Link(self.first, self.rest.rest.skip_node(n))
+    
+    
+\end{verbatim}
+
+x = Link(5, Link(7, Link(9, Link(6, Link(8, Link()))))) y =
+{[}5,7,9,6{]} print(x.a\_multiply(3)) print(x) print(x.skip\_node())
+
+\subsubsection{Additional Link Problems}\label{additional-link-problems}
+
+Note 1: The term `list' refers to linked list. Note 2: You may use
+methods you have created in the previous problems to support your code
+for later problems.
+
+Create a method that\ldots{}\\
+1. adds an element to the beginning of the list (mutator) variant:
+deletes an element from the beginning and returns it 2. adds an element
+to the end of the list (mutator) variant: deletes an element from the
+end and returns it 3. returns a new linked list that skips `n' nodes
+from the original linked list 4. counts the number of times an element
+occurs in the list 5. `deletes' all instances of an element from the
+list 6. insert element at the nth position (mutator) 7. takes a sorted
+list and inserts an element in the sorted position (mutator) 8. given a
+list, returns a new list that contains all of the nodes in sorted order
+9. appends the elements of another linked list onto the end of the
+original one 10. find the length of the longest consecutive sequence of
+elements that is strictly increasing 11. remove all duplicates from a
+sorted list 12. reverse the order of the elements in the list 13. Refer
+to this Stanford link and this interview problems link for more
+problems.
+
+    \subsubsection{OOP}\label{oop}
+
+Source:
+https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create model classes that will properly represent the following
+  constructs: Define a Shape object, where the object is any two
+  dimensional figure, and has the following characteristics: a name, a
+  perimeter, and a surface area. Define a Circle, retaining and
+  accurately outputting the values of the aforementioned characteristics
+  of a Shape. Define a Triangle. This time, the name of the triangle
+  should take into account if it is equilateral (all 3 sides are the
+  same length), isosceles (only 2 sides are the same length), or scalene
+  (no 2 sides are the same). Continue with the quadrilaterals!
+\item
+  We need to control access to a customer web site. each customer may
+  have one or more people to access the site different people from
+  different customers may be able to view different parts of the site
+  the same person may work for more than one customer customers want to
+  manage permissions based on the person, department, team, or project
+  Design a solution for this using object-oriented technique.
+\item
+  (Are you smarter than a CS Grad?) Write a program that prints the
+  numbers from 1 to 100. But for multiples of three print "Fizz" instead
+  of the number and for the multiples of five print "Buzz". For numbers
+  which are multiples of both three and five print "FizzBuzz."
+\item
+  Make a rough class diagram of the game Pacman. What classes would you
+  need? What class / instance variables are necessary? Would some
+  classes depend on the others?
+\end{enumerate}
+
+    \subsubsection{Tree Data Structures}\label{tree-data-structures}
+
+Source:
+https://www.careercup.com/page?pid=trees-and-graphs-interview-questions
+
+Directions: For each problem, write a new method for the Tree class. You
+can only use the methods already given or a method from the problems
+above.
+
+ class Tree:
+
+\begin{verbatim}
+def __init__(self, label, branches):
+    self.label = label
+    self.branches = branches
+
+def is_leaf(self):
+    if not self.branches:
+        return True
+    return False
+
+def branches(self):
+    return self.branches
+
+def label(self):
+    return self.label
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Minimum tree height (i.e. shortest branch from root node)
+\item
+  Largest integer value in the tree
+\item
+  Are two trees equal?
+\item
+  Traverse all of the elements of the tree in whatever order you
+  want\ldots{} using iteration
+\item
+  Find the minimum sum of any branch from root to leaf.
+\item
+  Find the maximum sum among all elements in the tree (don't have to be
+  in the same branch).
+\item
+  Given a Tree where each node contains an attribute e.g. color
+  (R,G,B... etc), find the subtree with the maximum number of
+  attributes.
+\end{enumerate}
+
+ Input: G / ~ B R / ~/ ~ B B R R / ~/ ~ B R R R
+
+Output: R / ~ R R ~/ ~ R R R 
+
 
     % Add a bibliography block to the postdoc
     
