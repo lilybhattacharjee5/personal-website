@@ -11793,7 +11793,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Tree-Recursion">Tree Recursion<a class="anchor-link" href="#Tree-Recursion">&#182;</a></h3><p>Check out this link for more tree recursion practice: <a href="https://practice.geeksforgeeks.org/topic-tags">https://practice.geeksforgeeks.org/topic-tags</a></p>
 <ol>
-<li>Given a number n, generate all distinct ways to write n as the sum of positive integers. For example, with n = 4, the options are 4, 3 + 1, 2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.  </li>
+<li>Given a number n, generate all distinct ways to write n as the sum of positive integers. For example, with n = 4, the options are 4, 3 + 1, 2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.</li>
 <li><p>Write a recursive function that checks whether a string is a palindrome (a palindrome is a string that's the same when reads forwards and backwards.)</p>
 </li>
 <li><p>Write a procedure that computes elements of Pascal's triangle by means of a recursive process. Define the procedure pascal(row, column) which takes a row and a column, and finds the value at that position in the triangle.</p>
@@ -11812,12 +11812,12 @@ div#notebook {
 <ol>
 <li>Complete the definition of towers_of_hanoi which prints out the steps to solve this puzzle for any number of n disks starting from the start rod and moving them to the end rod.</li>
 </ol>
-<p><code>
-def towers_of_hanoi(n, start, end):
-    …</p>
-<p>def move_disk(start, end):
-    …
-&lt;/code&gt;</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">towers_of_hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+    <span class="err">…</span>
+
+<span class="k">def</span> <span class="nf">move_disk</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+    <span class="err">…</span>
+</pre></div>
 <ol>
 <li>Implement Binary Search recursively.</li>
 </ol>
@@ -11829,8 +11829,7 @@ def towers_of_hanoi(n, start, end):
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Link-Class-(given-on-exam)">The Link Class (given on exam)<a class="anchor-link" href="#The-Link-Class-(given-on-exam)">&#182;</a></h3><p><code>
-class Link: 
+<h3 id="The-Link-Class-(given-on-exam)">The Link Class (given on exam)<a class="anchor-link" href="#The-Link-Class-(given-on-exam)">&#182;</a></h3><p>class Link: 
     def <strong>init</strong>(self, first, rest=empty):
         assert rest is Link.empty or isinstance(rest, Link) 
         self.first = first
@@ -11839,52 +11838,48 @@ class Link:
     if self.rest is Link.empty:<br>
         return "Link({})".format(self.first)<br>
     else:<br>
-        return "Link({}, {})".format(self.first, self.rest)
-&lt;/code&gt;</p>
-<h3 id="The-Link-Class-(customized)">The Link Class (customized)<a class="anchor-link" href="#The-Link-Class-(customized)">&#182;</a></h3><p><code>
-class Link:
-    def <strong>init</strong>(self, first = None, rest = None):
-        self.first = first
-        self.rest = rest</p>
+        return "Link({}, {})".format(self.first, self.rest)</p>
+<h3 id="The-Link-Class-(customized)">The Link Class (customized)<a class="anchor-link" href="#The-Link-Class-(customized)">&#182;</a></h3><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Link</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">first</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rest</span> <span class="o">=</span> <span class="n">rest</span>
 
-<pre><code>def __repr__(self):
-    # empty link ---&gt; None 
-    if self.first == None:
-        return "()"
-    else:
-   return 'Link' + '(' + str(self.first) + "," + 
-self.rest.__repr__() + ')'
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># empty link ---&gt; None </span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;()&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Link&#39;</span> <span class="o">+</span> <span class="s1">&#39;(&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span>
 
-def multiply(self, n):
-    if self.rest.first == None:
-        self.first = n * self.first
-    else:
-        self.first = n * self.first
-        self.rest.multiply(n)
+    <span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
-def a_multiply(self, n):
-    # if self == Link.empty
-    if self.rest.first == None:
-        return Link(self.first * n)
-    else:
-        return Link(self.first * n, self.rest.a_multiply(n))
+    <span class="k">def</span> <span class="nf">a_multiply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="c1"># if self == Link.empty</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">*</span> <span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">a_multiply</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
-def skip_node(self, n = 1):
-    if self.first == None:
-        return Link()
-    elif self.rest.first == None:
-        return Link(self.first, Link())
-    else:
-        return Link(self.first, self.rest.rest.skip_node(n))
+    <span class="k">def</span> <span class="nf">skip_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Link</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">first</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="n">Link</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">rest</span><span class="o">.</span><span class="n">skip_node</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 
 
-</code></pre>
-<p>x = Link(5, Link(7, Link(9, Link(6, Link(8, Link())))))
-y = [5,7,9,6]
-print(x.a_multiply(3))
-print(x)
-print(x.skip_node())
-&lt;/code&gt;</p>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Link</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Link</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">Link</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">Link</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">Link</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">Link</span><span class="p">())))))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">a_multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">skip_node</span><span class="p">())</span>
+</pre></div>
 <h3 id="Additional-Link-Problems">Additional Link Problems<a class="anchor-link" href="#Additional-Link-Problems">&#182;</a></h3><p>Note 1: The term ‘list’ refers to linked list.
 Note 2: You may use methods you have created in the previous problems to support your code for later problems.</p>
 <p>Create a method that…</p>
@@ -11915,11 +11910,12 @@ Note 2: You may use methods you have created in the previous problems to support
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="OOP">OOP<a class="anchor-link" href="#OOP">&#182;</a></h3><p>Source: <a href="https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews">https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews</a></p>
 <ol>
-<li>Create model classes that will properly represent the following constructs:
+<li><p>Create model classes that will properly represent the following constructs:
 Define a Shape object, where the object is any two dimensional figure, and has the following characteristics: a name, a perimeter, and a surface area.
 Define a Circle, retaining and accurately outputting the values of the aforementioned characteristics of a Shape.
 Define a Triangle. This time, the name of the triangle should take into account if it is equilateral (all 3 sides are the same length), isosceles (only 2 sides are the same length), or scalene (no 2 sides are the same).
-Continue with the quadrilaterals!</li>
+Continue with the quadrilaterals!</p>
+</li>
 <li><p>We need to control access to a customer web site.
 each customer may have one or more people to access the site
 different people from different customers may be able to view different parts of the site
@@ -11942,25 +11938,23 @@ Design a solution for this using object-oriented technique.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Tree-Data-Structures">Tree Data Structures<a class="anchor-link" href="#Tree-Data-Structures">&#182;</a></h3><p>Source: <a href="https://www.careercup.com/page?pid=trees-and-graphs-interview-questions">https://www.careercup.com/page?pid=trees-and-graphs-interview-questions</a></p>
 <p>Directions: For each problem, write a new method for the Tree class. You can only use the methods already given or a method from the problems above.</p>
-<p><code>
-class Tree:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tree</span><span class="p">:</span>
 
-<pre><code>def __init__(self, label, branches):
-    self.label = label
-    self.branches = branches
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">branches</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">branches</span> <span class="o">=</span> <span class="n">branches</span>
 
-def is_leaf(self):
-    if not self.branches:
-        return True
-    return False
+    <span class="k">def</span> <span class="nf">is_leaf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
 
-def branches(self):
-    return self.branches
+    <span class="k">def</span> <span class="nf">branches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span>
 
-def label(self):
-    return self.label
-</code></pre>
-<p>&lt;/code&gt;</p>
+    <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+</pre></div>
 <ol>
 <li>Minimum tree height (i.e. shortest branch from root node)</li>
 <li>Largest integer value in the tree</li>
@@ -11970,22 +11964,22 @@ def label(self):
 <li>Find the maximum sum among all elements in the tree (don’t have to be in the same branch).</li>
 <li>Given a Tree where each node contains an attribute e.g. color (R,G,B... etc), find the subtree with the maximum number of attributes. </li>
 </ol>
-<p><code>
-Input: 
-G 
-/ \ 
-B  R 
-/ \ / \ 
-B B R R 
-/ \ / \ 
-B R R R</p>
-<p>Output: 
-R 
-/ \ 
-R R 
-\ / \ 
-R R R
-&lt;/code&gt;</p>
+<div class="highlight"><pre><span></span><span class="n">Input</span><span class="p">:</span> 
+<span class="n">G</span> 
+<span class="o">/</span> \ 
+<span class="n">B</span>  <span class="n">R</span> 
+<span class="o">/</span> \ <span class="o">/</span> \ 
+<span class="n">B</span> <span class="n">B</span> <span class="n">R</span> <span class="n">R</span> 
+<span class="o">/</span> \ <span class="o">/</span> \ 
+<span class="n">B</span> <span class="n">R</span> <span class="n">R</span> <span class="n">R</span> 
+
+<span class="n">Output</span><span class="p">:</span> 
+<span class="n">R</span> 
+<span class="o">/</span> \ 
+<span class="n">R</span> <span class="n">R</span> 
+\ <span class="o">/</span> \ 
+<span class="n">R</span> <span class="n">R</span> <span class="n">R</span>
+</pre></div>
 
 </div>
 </div>

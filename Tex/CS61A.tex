@@ -295,7 +295,7 @@ https://practice.geeksforgeeks.org/topic-tags
 \item
   Given a number n, generate all distinct ways to write n as the sum of
   positive integers. For example, with n = 4, the options are 4, 3 + 1,
-  2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.  
+  2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.
 \item
   Write a recursive function that checks whether a string is a
   palindrome (a palindrome is a string that's the same when reads
@@ -339,9 +339,15 @@ an unsorted sequence s and sorts it.
   start rod and moving them to the end rod.
 \end{enumerate}
 
- def towers\_of\_hanoi(n, start, end): \ldots{}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ towers_of_hanoi(n, start, end):}
+\NormalTok{    …}
 
-def move\_disk(start, end): \ldots{}
+\KeywordTok{def}\NormalTok{ move_disk(start, end):}
+\NormalTok{    …}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -354,7 +360,7 @@ def move\_disk(start, end): \ldots{}
     \subsubsection{The Link Class (given on
 exam)}\label{the-link-class-given-on-exam}
 
- class Link: def \textbf{init}(self, first, rest=empty): assert rest is
+class Link: def \textbf{init}(self, first, rest=empty): assert rest is
 Link.empty or isinstance(rest, Link) self.first = first self.rest = rest
 
 def \textbf{repr}(self): if self.rest is Link.empty:\\
@@ -365,45 +371,50 @@ return "Link(\{\}, \{\})".format(self.first, self.rest)
 \subsubsection{The Link Class
 (customized)}\label{the-link-class-customized}
 
- class Link: def \textbf{init}(self, first = None, rest = None):
-self.first = first self.rest = rest
-
-\begin{verbatim}
-def __repr__(self):
-    # empty link ---> None 
-    if self.first == None:
-        return "()"
-    else:
-   return 'Link' + '(' + str(self.first) + "," + 
-self.rest.__repr__() + ')'
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Link:}
+    \KeywordTok{def} \FunctionTok{__init__}\NormalTok{(}\VariableTok{self}\NormalTok{, first }\OperatorTok{=} \VariableTok{None}\NormalTok{, rest }\OperatorTok{=} \VariableTok{None}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.first }\OperatorTok{=}\NormalTok{ first}
+        \VariableTok{self}\NormalTok{.rest }\OperatorTok{=}\NormalTok{ rest}
         
-def multiply(self, n):
-    if self.rest.first == None:
-        self.first = n * self.first
-    else:
-        self.first = n * self.first
-        self.rest.multiply(n)
+    \KeywordTok{def} \FunctionTok{__repr__}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+        \CommentTok{# empty link ---> None }
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.first }\OperatorTok{==} \VariableTok{None}\NormalTok{:}
+            \ControlFlowTok{return} \StringTok{"()"}
+        \ControlFlowTok{else}\NormalTok{:}
+            \ControlFlowTok{return} \StringTok{'Link'} \OperatorTok{+} \StringTok{'('} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(}\VariableTok{self}\NormalTok{.first) }\OperatorTok{+} \StringTok{","} \OperatorTok{+} \VariableTok{self}\NormalTok{.rest.}\FunctionTok{__repr__}\NormalTok{() }\OperatorTok{+} \StringTok{')'}
+            
+    \KeywordTok{def}\NormalTok{ multiply(}\VariableTok{self}\NormalTok{, n):}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.rest.first }\OperatorTok{==} \VariableTok{None}\NormalTok{:}
+            \VariableTok{self}\NormalTok{.first }\OperatorTok{=}\NormalTok{ n }\OperatorTok{*} \VariableTok{self}\NormalTok{.first}
+        \ControlFlowTok{else}\NormalTok{:}
+            \VariableTok{self}\NormalTok{.first }\OperatorTok{=}\NormalTok{ n }\OperatorTok{*} \VariableTok{self}\NormalTok{.first}
+            \VariableTok{self}\NormalTok{.rest.multiply(n)}
+            
+    \KeywordTok{def}\NormalTok{ a_multiply(}\VariableTok{self}\NormalTok{, n):}
+        \CommentTok{# if self == Link.empty}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.rest.first }\OperatorTok{==} \VariableTok{None}\NormalTok{:}
+            \ControlFlowTok{return}\NormalTok{ Link(}\VariableTok{self}\NormalTok{.first }\OperatorTok{*}\NormalTok{ n)}
+        \ControlFlowTok{else}\NormalTok{:}
+            \ControlFlowTok{return}\NormalTok{ Link(}\VariableTok{self}\NormalTok{.first }\OperatorTok{*}\NormalTok{ n, }\VariableTok{self}\NormalTok{.rest.a_multiply(n))}
+            
+    \KeywordTok{def}\NormalTok{ skip_node(}\VariableTok{self}\NormalTok{, n }\OperatorTok{=} \DecValTok{1}\NormalTok{):}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.first }\OperatorTok{==} \VariableTok{None}\NormalTok{:}
+            \ControlFlowTok{return}\NormalTok{ Link()}
+        \ControlFlowTok{elif} \VariableTok{self}\NormalTok{.rest.first }\OperatorTok{==} \VariableTok{None}\NormalTok{:}
+            \ControlFlowTok{return}\NormalTok{ Link(}\VariableTok{self}\NormalTok{.first, Link())}
+        \ControlFlowTok{else}\NormalTok{:}
+            \ControlFlowTok{return}\NormalTok{ Link(}\VariableTok{self}\NormalTok{.first, }\VariableTok{self}\NormalTok{.rest.rest.skip_node(n))}
         
-def a_multiply(self, n):
-    # if self == Link.empty
-    if self.rest.first == None:
-        return Link(self.first * n)
-    else:
-        return Link(self.first * n, self.rest.a_multiply(n))
         
-def skip_node(self, n = 1):
-    if self.first == None:
-        return Link()
-    elif self.rest.first == None:
-        return Link(self.first, Link())
-    else:
-        return Link(self.first, self.rest.rest.skip_node(n))
-    
-    
-\end{verbatim}
-
-x = Link(5, Link(7, Link(9, Link(6, Link(8, Link()))))) y =
-{[}5,7,9,6{]} print(x.a\_multiply(3)) print(x) print(x.skip\_node())
+\NormalTok{x }\OperatorTok{=}\NormalTok{ Link(}\DecValTok{5}\NormalTok{, Link(}\DecValTok{7}\NormalTok{, Link(}\DecValTok{9}\NormalTok{, Link(}\DecValTok{6}\NormalTok{, Link(}\DecValTok{8}\NormalTok{, Link())))))}
+\NormalTok{y }\OperatorTok{=}\NormalTok{ [}\DecValTok{5}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{6}\NormalTok{]}
+\BuiltInTok{print}\NormalTok{(x.a_multiply(}\DecValTok{3}\NormalTok{))}
+\BuiltInTok{print}\NormalTok{(x)}
+\BuiltInTok{print}\NormalTok{(x.skip_node())}
+\end{Highlighting}
+\end{Shaded}
 
 \subsubsection{Additional Link Problems}\label{additional-link-problems}
 
@@ -472,24 +483,26 @@ Directions: For each problem, write a new method for the Tree class. You
 can only use the methods already given or a method from the problems
 above.
 
- class Tree:
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Tree:}
+    
+    \KeywordTok{def} \FunctionTok{__init__}\NormalTok{(}\VariableTok{self}\NormalTok{, label, branches):}
+        \VariableTok{self}\NormalTok{.label }\OperatorTok{=}\NormalTok{ label}
+        \VariableTok{self}\NormalTok{.branches }\OperatorTok{=}\NormalTok{ branches}
 
-\begin{verbatim}
-def __init__(self, label, branches):
-    self.label = label
-    self.branches = branches
+    \KeywordTok{def}\NormalTok{ is_leaf(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{if} \KeywordTok{not} \VariableTok{self}\NormalTok{.branches:}
+            \ControlFlowTok{return} \VariableTok{True}
+        \ControlFlowTok{return} \VariableTok{False}
 
-def is_leaf(self):
-    if not self.branches:
-        return True
-    return False
+    \KeywordTok{def}\NormalTok{ branches(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.branches}
 
-def branches(self):
-    return self.branches
-
-def label(self):
-    return self.label
-\end{verbatim}
+    \KeywordTok{def}\NormalTok{ label(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \VariableTok{self}\NormalTok{.label}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -514,9 +527,25 @@ def label(self):
   attributes.
 \end{enumerate}
 
- Input: G / ~ B R / ~/ ~ B B R R / ~/ ~ B R R R
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Input: }
+\NormalTok{G }
+\OperatorTok{/} \OperatorTok{\textbackslash{}} 
+\NormalTok{B  R }
+\OperatorTok{/} \OperatorTok{\textbackslash{}} \OperatorTok{/} \OperatorTok{\textbackslash{}} 
+\NormalTok{B B R R }
+\OperatorTok{/} \OperatorTok{\textbackslash{}} \OperatorTok{/} \OperatorTok{\textbackslash{}} 
+\NormalTok{B R R R }
 
-Output: R / ~ R R ~/ ~ R R R 
+\NormalTok{Output: }
+\NormalTok{R }
+\OperatorTok{/} \OperatorTok{\textbackslash{}} 
+\NormalTok{R R }
+\OperatorTok{\textbackslash{}} \OperatorTok{/} \OperatorTok{\textbackslash{}} 
+\NormalTok{R R R}
+\end{Highlighting}
+\end{Shaded}
 
 
     % Add a bibliography block to the postdoc

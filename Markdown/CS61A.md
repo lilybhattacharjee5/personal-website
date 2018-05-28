@@ -6,7 +6,7 @@
 ### Tree Recursion
 Check out this link for more tree recursion practice: https://practice.geeksforgeeks.org/topic-tags
 
-1. Given a number n, generate all distinct ways to write n as the sum of positive integers. For example, with n = 4, the options are 4, 3 + 1, 2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.  
+1. Given a number n, generate all distinct ways to write n as the sum of positive integers. For example, with n = 4, the options are 4, 3 + 1, 2 + 2, 2 + 1 + 1, and 1 + 1 + 1 + 1.
 2. Write a recursive function that checks whether a string is a palindrome (a palindrome is a string that's the same when reads forwards and backwards.)
 
 3. Write a procedure that computes elements of Pascal's triangle by means of a recursive process. Define the procedure pascal(row, column) which takes a row and a column, and finds the value at that position in the triangle.
@@ -25,19 +25,18 @@ Using the described algorithm, write a function mergesort(s) that takes an unsor
 
 6. Complete the definition of towers_of_hanoi which prints out the steps to solve this puzzle for any number of n disks starting from the start rod and moving them to the end rod.
 
-<code>
+```python
 def towers_of_hanoi(n, start, end):
 	…
 
 def move_disk(start, end):
 	…
-</code>
+```
 
 7. Implement Binary Search recursively.
 
 ### The Link Class (given on exam)
 
-<code>
 class Link:	
 	def __init__(self, first, rest=empty):
         assert rest is Link.empty or isinstance(rest, Link) 
@@ -49,11 +48,10 @@ def __repr__(self):
         return "Link({})".format(self.first)				
     else: 					
         return "Link({}, {})".format(self.first, self.rest)
-</code>
 
 ### The Link Class (customized)
 
-<code>
+```python
 class Link:
     def __init__(self, first = None, rest = None):
         self.first = first
@@ -64,8 +62,7 @@ class Link:
         if self.first == None:
             return "()"
         else:
-       return 'Link' + '(' + str(self.first) + "," + 
- 	self.rest.__repr__() + ')'
+            return 'Link' + '(' + str(self.first) + "," + self.rest.__repr__() + ')'
             
     def multiply(self, n):
         if self.rest.first == None:
@@ -95,7 +92,7 @@ y = [5,7,9,6]
 print(x.a_multiply(3))
 print(x)
 print(x.skip_node())
-</code>
+```
 
 ### Additional Link Problems
 
@@ -120,6 +117,7 @@ Create a method that…
 13. Refer to this Stanford link and this interview problems link for more problems.
 
 ### OOP
+
 Source: https://stackoverflow.com/questions/245800/oop-problems-to-use-for-coding-tests-during-interviews
 
 1. Create model classes that will properly represent the following constructs:
@@ -127,6 +125,7 @@ Define a Shape object, where the object is any two dimensional figure, and has t
 Define a Circle, retaining and accurately outputting the values of the aforementioned characteristics of a Shape.
 Define a Triangle. This time, the name of the triangle should take into account if it is equilateral (all 3 sides are the same length), isosceles (only 2 sides are the same length), or scalene (no 2 sides are the same).
 Continue with the quadrilaterals!
+
 2. We need to control access to a customer web site.
 each customer may have one or more people to access the site
 different people from different customers may be able to view different parts of the site
@@ -143,7 +142,7 @@ Source: https://www.careercup.com/page?pid=trees-and-graphs-interview-questions
 
 Directions: For each problem, write a new method for the Tree class. You can only use the methods already given or a method from the problems above.
 
-<code>
+```python
 class Tree:
 	
 	def __init__(self, label, branches):
@@ -160,7 +159,7 @@ class Tree:
 
 	def label(self):
 		return self.label
-</code>
+```
 
 1. Minimum tree height (i.e. shortest branch from root node)
 2. Largest integer value in the tree
@@ -170,7 +169,7 @@ class Tree:
 6. Find the maximum sum among all elements in the tree (don’t have to be in the same branch).
 7. Given a Tree where each node contains an attribute e.g. color (R,G,B... etc), find the subtree with the maximum number of attributes. 
 
-<code>
+```python
 Input: 
 G 
 / \ 
@@ -186,4 +185,4 @@ R
 R R 
 \ / \ 
 R R R
-</code>
+```
