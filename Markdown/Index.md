@@ -2,7 +2,9 @@
 # Lily Bhattacharjee
 
 ## Who Am I?
-- Student at UC Berkeley (Electrical Engineering and Computer Science, Class of 2021)
+- Student at UC Berkeley (Electrical Engineering and Computer Science, Class of '21)
+- Current: Undergraduate Research Assistant @ UCB Space Sciences Laboratory
+- Contact me at <b>lbhattacharjee@berkeley.edu</b> if you're interested in chatting about anything -- research, side projects, or even <i>Doctor Who</i>!
 
 ## Classes
 - CS 61A (<i>The Structure and Interpretation of Computer Programs</i>)
@@ -16,7 +18,7 @@
 - Academic Intern (CS 61A, Spring '18)
 - Reader (EE 16A, Spring '18)
 
-## Resources
+## Resources / Project Information
 - [CS 61A](Html/CS61A.html)
 - [CS 61B](Html/CS61B.html)
 - [DS 100](Html/DS100.html)
